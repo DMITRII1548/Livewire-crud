@@ -1,5 +1,11 @@
 <div class="mt-10 space-y-16 border-t border-gray-200 pt-10">
-    {{ $on_page }}
+    <div>
+        <ul>
+            @foreach ($categories as $category)
+                <li><a href="#" wire:click="changeCurrectCategory({{ $category->id }})">{{ $category->title }}</a></li>
+            @endforeach
+        </ul>
+    </div>
     @forelse($posts as $post)
         <article class="flex max-w-xl flex-col items-start justify-between">
             <div class="group relative">
@@ -9,6 +15,9 @@
                         {{ $post->id }}
                     </a>
                 </h3>
+                <p>
+                    <strong>CategoryId: {{ $post->category_id }}</strong>
+                </p>
                 <p class="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
                     {{ $post->content }}
                 </p>

@@ -24,7 +24,8 @@ class PostFactory extends Factory
         return [
             'title' => fake()->jobTitle(),
             'content' => fake()->text(),
-            'image' => $imageFilePath
+            'image' => $imageFilePath,
+            'category_id' => random_int(1, 5)
         ];
     }
 }
