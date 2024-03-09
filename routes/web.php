@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/posts/scroll', \App\Livewire\Post\Scroll::class)->name('posts.scroll');
+
 Route::get('/posts/create', \App\Livewire\Post\Create::class)->name('posts.create');
 Route::get('/posts', \App\Livewire\Post\Index::class)->name('posts.index');
 Route::get('/posts/{post}', \App\Livewire\Post\Show::class)->name('posts.show');
 Route::get('/posts/{post}/edit', \App\Livewire\Post\Edit::class)->name('posts.edit');
+
